@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="neural-network.js" defer></script>
+    <script src="canvas.js" defer></script>
+    <title>Neural Network</title>
+</head>
+<body>
+    <div class="main">
+        <div class="hamburger"></div>
+        <div class="content">
+            <div class="title">Simple Neural Network</div>
+            <div class="options">
+                <div class="options-title">Options</div>
+                <div class="options-text">Pixel Count</div>
+                <div class="options-slider">
+                    <label for="pixelCount" class="options-label">Pixel Count</label>
+                    <input type="range" min="5" max="50"  value="28" step="1" onchange="updatePixelCount()" name="pixelCount" id="pixelCount" class="options-input-slider">
+                    <div class="slider-text" id="pixelCountText"></div>
+                </div>
+                <div class="options-text">Brush Size</div>
+                <div class="options-slider">
+                    <input type="range" min="1" max="5" value="1" step="1"  name="brushSize" id="brushSize" class="options-input-slider">
+                    <div class="slider-text" id="brushSizeText"></div>
+                </div>
+                <div class="options-text">Rendering Driver</div>
+                <div class="button-section">
+                    <button class="options-button" onclick="driverJSCanvas">JS Canvas</button>
+                    <button class="options-button" onclick="driverHtml">HTML</button>
+                </div>
+                <div class="button-section clear-submit">
+                    <form id="csvForm">
+                        <input type="file" id="csvInput" accept=".csv" />
+                        <input type="submit" value="Submit" />
+                    </form>
+                    <button type="reset" class="options-button" onclick="clearCanvas()">Clear</button>
+                    <button type="submit" class="options-button" onclick="data.submitCanvas()">Submit</button>
+                </div>
+            </div>
+        </div>
+        <div class="canvas" id="canvas"></div>
+    </div>
+</body>
+</html>
